@@ -1,0 +1,90 @@
+﻿@model TutorialLinQ.Alumnos
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Alumnos</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.idAlumno)
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Apellidos</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.apellidos, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.apellidos, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Nombres</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.nombres, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.nombres, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Edad</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.edad, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.edad, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Mail</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.mail, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.mail, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Domicilio</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.domicilio, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.domicilio, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Teléfono</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.telefono, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.telefono, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">DNI</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.dni, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.dni, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Volver a la Lista", "Lista")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

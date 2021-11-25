@@ -1,0 +1,61 @@
+﻿@model IEnumerable<TutorialLinQ.Alumnos>
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2>Lista de Alumnos</h2>
+
+<p>
+    @Html.ActionLink("Agregar Alumno", "Create") |
+    @Html.ActionLink("Exportar como PDF", "PrintViewToPdf")
+</p>
+<table class="table table-bordered">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Email</th>
+            <th scope="col">Domicilio</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">DNI</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>   
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.apellidos)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.nombres)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.edad)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.mail)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.domicilio)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.telefono)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.dni)
+                </td>
+                <td scope="row">
+                    @Html.ActionLink("Editar", "Edit", new { id = item.idAlumno }) |
+                    <a href="/Alumnos/Delete/@item.idAlumno" onclick="return confirm('Seguro que quiere eliminar el alumno: @item.nombres @item.apellidos?')">Borrar</a> |
+                    @Html.ActionLink("Imprimir detalles", "PrintPartialViewToPdf", new { id = item.idAlumno }) 
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>

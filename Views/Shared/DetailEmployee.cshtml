@@ -1,0 +1,70 @@
+﻿@model TutorialLinQ.Alumnos
+
+@{
+    ViewBag.Title = "DetailEmployee";
+}
+
+<h2>DetailEmployee</h2>
+
+<div>
+    <h4>AlumnoCLS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Apellidos:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellidos)
+        </dd>
+
+        <dt>
+            Nombres:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombres)
+        </dd>
+
+        <dt>
+           Edad:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edad)
+        </dd>
+
+        <dt>
+            Mail:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mail)
+        </dd>
+
+        <dt>
+            Domicilio:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.domicilio)
+        </dd>
+
+        <dt>
+            Teléfono:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            DNI:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dni)
+        </dd>
+
+    </dl>
+</div>
